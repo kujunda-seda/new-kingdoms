@@ -1,0 +1,4 @@
+This product contains material from third parties.
+
+Copyright (c) 2022 just-the-docs
+MIT License: https://github.com/just-the-docs/just-the-docs-template/blob/main/LICENSE
