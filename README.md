@@ -1,6 +1,8 @@
 # New Kingdoms Game Engine
 New Kingdoms is a game engine for coders.
 
+<img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
+
 ## Prerequisites
 
 
