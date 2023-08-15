@@ -1,7 +1,7 @@
 title: New Kingdoms
 description: >-
 baseurl: ""
-url: "http://newkingdoms.io"
+url: "https://newkingdoms.io"
 
 # Build settings
 theme: just-the-docs
