@@ -63,7 +63,7 @@ ruby-install ruby 3.1.3
 echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
 echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
 ```
-**If you've cloned the repo and already have the docs, skip steps 4-6.** 
+**If you've cloned the repo and already have the docs, skip steps 4-7.** 
 
 4. Don't get straight into installing `jekyll`, as you will also need `bundler` to install gems into a local path. The `bundler` itself is pre-installed with the latest Ruby. In your docs folder create a bundle and configure it to use local path:
 ```
@@ -80,13 +80,13 @@ bundle add jekyll
 ```
 bundle exec jekyll new --force --skip-bundle .
 ```
-7. Install gems into the bundle:
-```
-bundle install
-```
-8. For Ruby 3.0+ add [WEBrick](https://github.com/ruby/webrick) HTTP server as it is no longer pre-installed with Ruby:
+7. For Ruby 3.0+ add [WEBrick](https://github.com/ruby/webrick) HTTP server as it is no longer pre-installed with Ruby:
 ```
 bundle add webrick
+```
+8. Install gems into the bundle:
+```
+bundle install
 ```
 9. Run the Jekyll server on the bundle:
 ```
