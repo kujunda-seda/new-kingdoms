@@ -1,10 +1,50 @@
 # New Kingdoms Game Engine
 New Kingdoms is a game engine for coders.
 
+Please read the [New Kingdoms reference docs](https://newkingdoms.io) to understand how to create games with it, including the examples.
+
+There will be many changes to the engine after 1.0, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
+
 <img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
 
 ## Prerequisites
+To create games with New Kingdoms you will need LÖVE framework, VS Code, and Lua Language Server. Instructions here are provided for macOS, but it will work on Linux and Windows as well.
 
+### 1. LÖVE framework
+To be able to run and compile LÖVE games you need to install the framework/app.
+1. Download the latest version of LÖVE from [the website](http://love2d.org/#download), choose: MacOS 64-bit zipped.
+2. Unzip the app and move it into the **Applications** folder.
+3. To call `love` from terminal in IDE and see console output, add an alias to `~/.zshrc`:
+```
+alias love="/Applications/love.app/Contents/MacOS/love"
+```
+4. Check that it works with `love --version`
+
+### 2. Install [Visual Studio Code](https://code.visualstudio.com/download)
+
+### 3. Add Lua Language Server
+Lua Language Server (LuaLS) provides code completion and annotations that make it easy to write OOP code in dynamically-typed Lua. You can read more on that in a [detailed primer](https://medium.com/@yankalbaska/oop-in-lua-9962e47ed603).
+1. Add VS Code plugin [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
+2. It will automatically (at least upon restart) ask you to configure your project to run with LÖVE, when it detects certain keywords. After applied, it will result in `.vscode/settings.json` file:
+```
+{
+    "Lua.runtime.version": "LuaJIT",
+    "Lua.runtime.special": {
+        "love.filesystem.load": "loadfile"
+    },
+    "Lua.workspace.library": [
+        "${3rd}/love2d/library"
+    ]
+}
+```
+### 4. (Optional) Shortcut plugin
+To run games from the IDE with a shortcut, install [Love 2D Support](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) plugin and configure its path to Love executable (same alias you provided earlier for LÖVE settings) which is also added to workspace settings file above:
+```
+/Applications/love.app/Contents/MacOS/love
+```
+
+## Installation
+New Kingdoms is provided as template code in `src` folder. It is very thin and all-modifiable. Just copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described above.
 
 ## Docs
 Docs for the New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
