@@ -10,9 +10,9 @@ There will be many changes to the engine after 1.0, but this should not discoura
 <img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
 
 ## Installation
-New Kingdoms is provided as template code in `src` folder. It is very thin and all-modifiable. Copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described below.
+New Kingdoms is distributed as template code in `src` folder. It is very thin and all-modifiable. Copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described below.
 
-To experiment with examples, check out to one of the `working-samples/` branches and run the code with `love src`.
+To experiment with the examples, check out to one of the `working-samples/` branches and run the code with `love src`.
 
 ## Prerequisites
 To create games with New Kingdoms you will need LÖVE framework, VS Code, and Lua Language Server. Instructions here are provided for macOS, but it will work on Linux and Windows as well.
