@@ -1,11 +1,18 @@
 # New Kingdoms Game Engine
 New Kingdoms is a game engine for coders.
 
-Please read the [New Kingdoms reference docs](https://newkingdoms.io) to understand how to create games with it, including the examples.
+The main benefit of the New Kingdoms is not the code itself, but a readily implemented concept of decoupled and independently programmed object behaviours and their (optional) presentation. The code sets the minimal required interaction between the game layers, that bring those objects to life in a sandboxed universe.
+
+Please read the [New Kingdoms reference docs](https://newkingdoms.io) to understand how to create games with it and follow the examples.
 
 There will be many changes to the engine after 1.0, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
 
 <img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
+
+## Installation
+New Kingdoms is distributed as template code in `src` folder. It is very thin and all-modifiable. Copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described below.
+
+To experiment with the examples, check out to one of the `working-samples/` branches and run the code with `love src`.
 
 ## Prerequisites
 To create games with New Kingdoms you will need LÖVE framework, VS Code, and Lua Language Server. Instructions here are provided for macOS, but it will work on Linux and Windows as well.
@@ -43,9 +50,6 @@ To run games from the IDE with a shortcut, install [Love 2D Support](https://mar
 /Applications/love.app/Contents/MacOS/love
 ```
 
-## Installation
-New Kingdoms is provided as template code in `src` folder. It is very thin and all-modifiable. Just copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described above.
-
 ## Docs
 Docs for the New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
 
@@ -63,7 +67,7 @@ ruby-install ruby 3.1.3
 echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
 echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
 ```
-**If you've cloned the repo and already have the docs, skip steps 4-6.** 
+**If you've cloned the repo and already have the docs, skip steps 4-7.** 
 
 4. Don't get straight into installing `jekyll`, as you will also need `bundler` to install gems into a local path. The `bundler` itself is pre-installed with the latest Ruby. In your docs folder create a bundle and configure it to use local path:
 ```
@@ -80,13 +84,13 @@ bundle add jekyll
 ```
 bundle exec jekyll new --force --skip-bundle .
 ```
-7. Install gems into the bundle:
-```
-bundle install
-```
-8. For Ruby 3.0+ add [WEBrick](https://github.com/ruby/webrick) HTTP server as it is no longer pre-installed with Ruby:
+7. For Ruby 3.0+ add [WEBrick](https://github.com/ruby/webrick) HTTP server as it is no longer pre-installed with Ruby:
 ```
 bundle add webrick
+```
+8. Install gems into the bundle:
+```
+bundle install
 ```
 9. Run the Jekyll server on the bundle:
 ```
