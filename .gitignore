@@ -3,3 +3,6 @@
 *.dylib
 *.dmg*
 ._*
+
+# VS Code
+.vscode
