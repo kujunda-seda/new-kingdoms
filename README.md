@@ -9,8 +9,8 @@ There will be major changes to the engine after 1.0, but this should not discour
 
 <img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
 
-#### Learn more:
-- Read about the motivation behind the creation of the engine in [Clean Architecture in Gamedev](https://medium.com/@yankalbaska/clean-architecture-in-game-development-e57542a96e5e),
+### Learn more:
+- Read about the motivation behind the creation of the engine in [Clean Architecture in Gamedev](https://medium.com/@yankalbaska/clean-architecture-in-game-development-e57542a96e5e)
 - Understand how [Object-oriented programming in Lua](https://medium.com/@yankalbaska/oop-in-lua-9962e47ed603) works.
 
 ## Installation
