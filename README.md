@@ -3,11 +3,15 @@ New Kingdoms is a game engine for coders.
 
 The main benefit of the New Kingdoms is not the code itself, but a readily implemented concept of decoupled and independently programmed object behaviours and their (optional) presentation. The code sets the minimal required interaction between the game layers, that bring those objects to life in a sandboxed universe.
 
-Please read the [New Kingdoms reference docs](https://newkingdoms.io) to understand how to create games with it and follow the examples.
+Please explore the [New Kingdoms Documentation](https://newkingdoms.io) to understand how to create games with it and follow the examples.
 
-There will be many changes to the engine after 1.0, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
+There will be major changes to the engine after 1.0, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
 
 <img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
+
+### Learn more:
+- Read about the motivation behind the creation of the engine in [Clean Architecture in Gamedev](https://medium.com/@yankalbaska/clean-architecture-in-game-development-e57542a96e5e)
+- Understand how [Object-oriented programming in Lua](https://medium.com/@yankalbaska/oop-in-lua-9962e47ed603) works.
 
 ## Installation
 New Kingdoms is distributed as template code in [`src`](/src) folder. It is very thin and all-modifiable. Copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described below.
