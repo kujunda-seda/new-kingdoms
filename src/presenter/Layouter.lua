@@ -17,15 +17,15 @@ function Layouter.layoutObjectsIntoViewHierarchy(objects)
     local viewHierarchy = {}
 
     -- [Configure all parameters for views later used for drawing by type]
-    local placeholders = objects.Placeholder
-    if placeholders ~= nil then
-        for _, placeholder in ipairs(placeholders) do
-            ---@cast placeholder Placeholder
+    local placeholderObjects = objects.PlaceholderObject
+    if placeholderObjects ~= nil then
+        for _, placeholderObject in ipairs(placeholderObjects) do
+            ---@cast placeholderObject PlaceholderObject
             local placeholderView = PlaceholderView:new()
 
             -- [Configure view]
 
-            table.insert(viewHierarchy, ViewPair:new(placeholderView, placeholder))
+            table.insert(viewHierarchy, ViewPair:new(placeholderView, placeholderObject))
         end
     end
 
