@@ -1,7 +1,7 @@
 ---
 layout: home
 ---
-# Welcome to the New Kingdoms
+# Welcome to the New&nbsp;Kingdoms
 _a game engine for coders._
 
 ![New Kingdoms Logo](../../assets/images/new-kingdoms-logo.png){: width="96" }
