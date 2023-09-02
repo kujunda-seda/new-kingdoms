@@ -1,9 +1,9 @@
-local Placeholder = require "objects.Placeholder"
+local PlaceholderObject = require "src.objects.PlaceholderObject"
 -- [Require all added game objects for game world]
 
 --- All available game object types for easier by-type iteration during updates
 ---@alias GameObjectType
----| 'Placeholder' # a placeholder set
+---| 'PlaceholderObject' # a placeholder set
 -- [Define all game object types as an enumeration]
 
 --- Type-associative table of indexed game objects, e.g. {objectType1 = {object1, object2}, ...}.<br> For autocompletion to work properly when specific objects are fetched, requires casting to a type `---@cast object1 GameObjectType`.
@@ -20,10 +20,10 @@ function GameRules:createWorld()
     local gameWorld = {}
 
     -- [Create, configure game objects and add them to gameWorld]
-    gameWorld.Placeholder = {}
-    local aPlaceholder = Placeholder:new()
+    gameWorld.PlaceholderObject = {}
+    local aPlaceholderObject = PlaceholderObject:new()
     -- [Configure game object]
-    table.insert(gameWorld.Placeholder, aPlaceholder)
+    table.insert(gameWorld.PlaceholderObject, aPlaceholderObject)
 
     return gameWorld
 end
@@ -33,9 +33,9 @@ end
 function GameRules:updateWorld(gameWorld, timediff)
 
     -- [Update all object types of gameWorld]
-    for _, placeholder in ipairs(gameWorld.Placeholder) do
-        ---@cast placeholder Placeholder
-        placeholder:updateWith(timediff)
+    for _, placeholderObject in ipairs(gameWorld.PlaceholderObject) do
+        ---@cast placeholderObject PlaceholderObject
+        placeholderObject:updateWith(timediff)
     end
 
 end

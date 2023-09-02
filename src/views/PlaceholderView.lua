@@ -1,6 +1,6 @@
 local View = require "views.View"
 
----Placeholder view representing example of `Placeholder` game object in UI
+---Placeholder view representing example of `PlaceholderObject` game object in UI
 ---@class PlaceholderView:View
 ---@field isDisabled boolean Indicates if the view takes part in interaction.
 ---@field x number x-position on screen

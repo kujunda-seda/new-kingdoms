@@ -1,0 +1,16 @@
+@import "./color_schemes/dark";
+
+$blue-dk-cga-toned: #4CA7A9 !default;
+$red-dk-cga-toned: #EC625C !default;
+
+$grey-dk-cga: #555555 !default;
+$blue-dk-cga: #00aaaa !default;
+$red-dk-cga: #ff5555 !default;
+$grey-lt-cga: #aaaaaa !default;
+
+
+$body-background-color: $grey-dk-cga;
+$sidebar-color: $grey-dk-cga;
+$link-color: $blue-dk-cga;
+
+$feedback-color: darken($sidebar-color, 3%);
