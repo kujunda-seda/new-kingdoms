@@ -1,6 +1,6 @@
 local GameObjectCollection = require "types.GameObjectCollection"
 -- [Require all game objects for game world]
-local PlaceholderObject = require "objects.PlaceholderObject"
+local Car = require "objects.Car"
 
 --- Creates and updates game objects according to game rules.
 ---@class GameRules
@@ -16,11 +16,9 @@ function GameRules:createWorld()
 
     -- [Create, configure game objects and add them to gameWorld]
 
-    local aPlaceholderObject = PlaceholderObject:new()
-
-    -- [Configure game object]
-
-    gameWorld:insertObject(aPlaceholderObject)
+    local aCar = Car:new()
+    aCar.speed = 30
+    gameWorld:insertObject(aCar)
 
     return gameWorld
 end
@@ -30,8 +28,8 @@ end
 function GameRules:updateWorld(gameWorld, timediff)
 
     -- [Update all object types of gameWorld]
-    for _, placeholderObject in ipairs(gameWorld:gameObjectArray(PlaceholderObject)) do
-        placeholderObject:updateWith(timediff)
+    for _, car in ipairs(gameWorld:gameObjectArray(Car)) do
+        car:moveWith(timediff)
     end
 end
 
