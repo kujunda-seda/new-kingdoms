@@ -1,8 +1,8 @@
---- _Prototype_ View interface.
+--- View interface (prototype).
 ---@class View
 local View = {}
 
---- _Prototype_ View constructor for use in subclass declaration.
+--- Constructor for use in subclass declaration.
 ---@param object table? Required when subclassing `View`
 ---@return View # New `View` object  
 function View:new(object)

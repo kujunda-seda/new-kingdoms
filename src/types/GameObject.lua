@@ -1,8 +1,8 @@
---- _Prototype_ GameObject interface.
+--- Game object interface (prototype)
 ---@class GameObject
 local GameObject = {}
 
---- _Prototype_ GameObject constructor for use in subclass declaration.
+--- Constructor for use in subclass declaration
 ---@param object table? Required when subclassing `GameObject` to add new properties
 ---@return GameObject # New `GameObject` object  
 function GameObject:new(object)

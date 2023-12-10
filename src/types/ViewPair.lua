@@ -1,3 +1,6 @@
+require "types.View"
+require "types.GameObject"
+
 --- Structure linking `View` and a `GameObject`
 ---@class ViewPair
 ---@field view View

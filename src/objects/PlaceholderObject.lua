@@ -25,7 +25,7 @@ function PlaceholderObject:updateWith(time)
 
 end
 
---- Notifies object of interaction.
+--- Notifies object of interaction
 function PlaceholderObject:objectInteracted()
 
     -- [Interaction logic]
