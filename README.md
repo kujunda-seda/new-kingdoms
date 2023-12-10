@@ -17,7 +17,7 @@ There will be major changes to the engine after 1.0, but this should not discour
 New Kingdoms is distributed as template code in [`src`](/src) folder. It is very thin and all-modifiable. Copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described below.
 
 ### Demo
-You can find a working example in the `/sample` folder and run its code with `love sample` (if you cloned the repo as is). You do not need to copy the `sample` folder together with `src` into your own project.
+You can find a working example in the [`/sample`](/sample) folder and run its code with `love sample` (if you cloned the repo as is). You do not need to copy the `sample` folder together with `src` into your own project.
 
 It's a very simple simulation of a car driving down the road and changing its color upon interaction.
 
