@@ -1,4 +1,4 @@
-local ViewPair = require "presenter.ViewPair"
+local ViewPair = require "types.ViewPair"
 -- [Require all added views for layouting]
 local PlaceholderView = require "views.PlaceholderView"
 

@@ -1,4 +1,4 @@
-local View = require "views.View"
+local View = require "types.View"
 
 ---Placeholder view representing example of `PlaceholderObject` game object in UI
 ---@class PlaceholderView:View
