@@ -11,7 +11,6 @@ local GameRules = {}
 ---@return GameObjectCollection
 function GameRules:createWorld()
 
-    ---@type GameObjectCollection
     local gameWorld = GameObjectCollection:new()
 
     gameWorld:insertObject(Stage:new())
