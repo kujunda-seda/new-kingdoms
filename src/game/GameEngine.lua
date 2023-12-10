@@ -49,7 +49,7 @@ function GameEngine:getViewableObjects()
     return self.gameWorld
 end
 
---- Propagates touch event to an engine so it can decide if it should be chained to an object or handled otherwise.
+--- Propagates touch event to the engine.
 ---@param object GameObject
 function GameEngine:objectInteracted(object)
     -- default scenario: channel / responder-chain all events to objects
