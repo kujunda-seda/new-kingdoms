@@ -2,8 +2,10 @@ require "types.GameObjectCollection"
 local ViewPair = require "types.ViewPair"
 -- all views for layouting
 local CarView = require "views.CarView"
+local StageView = require "views.StageView"
 -- all referenced objects
 local Car = require "objects.Car"
+local Stage = require "objects.Stage"
 
 --- Visually maps supplied game objects into views.
 ---@class Layouter
@@ -31,6 +33,12 @@ function Layouter.layoutObjectsIntoViewHierarchy(objects)
     local viewHierarchy = {}
 
     -- configure parameters for all view types used for drawing
+
+    local stage = objects:firstOfType(Stage)
+    if stage then
+        local stageView = StageView:new(0, 0, love.graphics.getWidth(), love.graphics.getHeight())
+        table.insert(viewHierarchy, ViewPair:new(stageView, stage))
+    end
 
     local cars = objects:gameObjectArray(Car)
     if cars then
