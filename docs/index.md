@@ -2,7 +2,7 @@
 layout: home
 ---
 # Welcome to the New&nbsp;Kingdoms
-_a game engine for coders._
+_Simulator and game prototyping engine._
 
 ![New Kingdoms Logo](../../assets/images/new-kingdoms-logo.png){: width="96" }
 

@@ -1,26 +1,32 @@
-local ViewPair = require "presenter.ViewPair"
--- [Require all added views for layouting]
+require "types.GameObjectCollection"
+local ViewPair = require "types.ViewPair"
+-- all views for layouting
 local PlaceholderView = require "views.PlaceholderView"
+-- all referenced objects
+local PlaceholderObject = require "objects.PlaceholderObject"
 
 --- Visually maps supplied game objects into views.
 ---@class Layouter
 local Layouter = {}
 
+-- Only class methods are used, therefore no constructor for instances exists.
+
 -- Constants
 -- [Provide constants for layouting]
 
 --- Creates view hierarchy with configured views and links them to corresponding objects.
----@param objects GameObjectCollection Type-associative table of indexed game objects, e.g. {objectType1 = {object1, object2}, ...}
----@return ViewPair[] viewHierarchy A z-indexed table of view:object pairs, e.g. [0]{view = view1,object = gameObject1}
+---@param objects GameObjectCollection Type-associative table of indexed game objects
+---@return ViewPair[] viewHierarchy A z-indexed table of view:object pairs
 function Layouter.layoutObjectsIntoViewHierarchy(objects)
-    ---@type ViewPair[] A z-indexed table of view:object pairs, e.g. [0]{view = view1,object = gameObject1}
+
+    ---@type ViewPair[]
     local viewHierarchy = {}
 
-    -- [Configure all parameters for views later used for drawing by type]
-    local placeholderObjects = objects.PlaceholderObject
-    if placeholderObjects ~= nil then
+    -- configure parameters for all view types used for drawing
+
+    local placeholderObjects = objects:gameObjectArray(PlaceholderObject)
+    if placeholderObjects then
         for _, placeholderObject in ipairs(placeholderObjects) do
-            ---@cast placeholderObject PlaceholderObject
             local placeholderView = PlaceholderView:new()
 
             -- [Configure view]

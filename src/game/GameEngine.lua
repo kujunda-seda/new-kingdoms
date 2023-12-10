@@ -1,4 +1,5 @@
 local GameRules = require "game.GameRules"
+local GameObjectCollection = require "types.GameObjectCollection"
 
 ---Manages game objects and relationships between them, e.g. creating scenes.
 ---@class GameEngine
@@ -12,7 +13,7 @@ function GameEngine:new()
     local newObject = setmetatable({}, self)
     self.__index = self
 
-    newObject.gameWorld = {}
+    newObject.gameWorld = GameObjectCollection:new()
     newObject.gameObjectsChanged = nil
 
     return newObject
@@ -21,8 +22,8 @@ end
 --- Starts a game engine and assigns callback to be called when objects change.
 ---@param listener function Callback function to be called when relayout is required
 function GameEngine:startWithObjectListener(listener)
-    self.gameObjectsChanged = listener
     self.gameWorld = GameRules:createWorld()
+    self.gameObjectsChanged = listener
 end
 
 function GameEngine:stop()
@@ -30,9 +31,8 @@ function GameEngine:stop()
 end
 
 --- Triggers game engine time shift.
----@param dt number Time difference from previous similar event in game time.
+---@param dt number Time difference from previous similar event in game time
 function GameEngine:timePassed(dt)
-
     -- default scenario: platform time = game time
     GameRules:updateWorld(self.gameWorld, dt)
 
@@ -45,14 +45,14 @@ end
 --- Returns viewable game objects grouped by type for easier parsing.
 ---@return GameObjectCollection
 function GameEngine:getViewableObjects()
-
     -- default scenario: returns all objects of the universe
     return self.gameWorld
 end
 
---- Propagates touch event to an engine so it can decide if it should be chained to an object or handled otherwise.
+--- Propagates touch event to the engine.
 ---@param object GameObject
 function GameEngine:objectInteracted(object)
+    -- default scenario: channel / responder-chain all events to objects
     object:objectInteracted()
 end
 

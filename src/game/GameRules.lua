@@ -1,43 +1,37 @@
-local PlaceholderObject = require "src.objects.PlaceholderObject"
--- [Require all added game objects for game world]
-
---- All available game object types for easier by-type iteration during updates
----@alias GameObjectType
----| 'PlaceholderObject' # a placeholder set
--- [Define all game object types as an enumeration]
-
---- Type-associative table of indexed game objects, e.g. {objectType1 = {object1, object2}, ...}.<br> For autocompletion to work properly when specific objects are fetched, requires casting to a type `---@cast object1 GameObjectType`.
----@alias GameObjectCollection { [GameObjectType]: GameObject[] } 
+local GameObjectCollection = require "types.GameObjectCollection"
+-- [Require all game objects for game world]
+local PlaceholderObject = require "objects.PlaceholderObject"
 
 --- Creates and updates game objects according to game rules.
 ---@class GameRules
 local GameRules = {}
 
+-- Only class methods are used, therefore no constructor for instances exists.
+
 ---@return GameObjectCollection
 function GameRules:createWorld()
 
-    ---@type GameObjectCollection
-    local gameWorld = {}
+    local gameWorld = GameObjectCollection:new()
 
     -- [Create, configure game objects and add them to gameWorld]
-    gameWorld.PlaceholderObject = {}
+
     local aPlaceholderObject = PlaceholderObject:new()
+
     -- [Configure game object]
-    table.insert(gameWorld.PlaceholderObject, aPlaceholderObject)
+
+    gameWorld:insertObject(aPlaceholderObject)
 
     return gameWorld
 end
 
----@param gameWorld GameObjectCollection All objects of the game universe.
+---@param gameWorld GameObjectCollection All objects of the game universe
 ---@param timediff number Game world time difference from previous call
 function GameRules:updateWorld(gameWorld, timediff)
 
     -- [Update all object types of gameWorld]
-    for _, placeholderObject in ipairs(gameWorld.PlaceholderObject) do
-        ---@cast placeholderObject PlaceholderObject
+    for _, placeholderObject in ipairs(gameWorld:gameObjectArray(PlaceholderObject)) do
         placeholderObject:updateWith(timediff)
     end
-
 end
 
 return GameRules

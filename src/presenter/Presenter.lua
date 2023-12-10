@@ -26,6 +26,7 @@ function Presenter:startGameEngine()
         local objects = self.gameEngine:getViewableObjects()
         self.viewHierarchy = Layouter.layoutObjectsIntoViewHierarchy(objects)
     end
+
     self.gameEngine:startWithObjectListener(layoutViews)
 end
 
@@ -40,7 +41,7 @@ function Presenter:drawViewHierarchy()
     end
 end
 
---- Time event from UI framework
+--- Time event from UI framework.
 ---@param dt number Interval after previous event in milliseconds
 function Presenter:timeEvent(dt)
     self.gameEngine:timePassed(dt)  -- use game time scale

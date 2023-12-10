@@ -1,4 +1,4 @@
-local View = require "views.View"
+local View = require "types.View"
 
 ---Placeholder view representing example of `PlaceholderObject` game object in UI
 ---@class PlaceholderView:View
@@ -8,8 +8,8 @@ local View = require "views.View"
 local PlaceholderView = View:new {}
 
 -- Constants
-local WIDTH = 30  -- Width of a view
-local HEIGHT = 70  -- Height of a view
+local WIDTH = 42  -- Width of a view
+local HEIGHT = 42  -- Height of a view
 
 ---@return PlaceholderView
 function PlaceholderView:new()
