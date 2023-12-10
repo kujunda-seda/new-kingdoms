@@ -1,9 +1,9 @@
 require "types.GameObjectCollection"
 local ViewPair = require "types.ViewPair"
 -- all views for layouting
-local PlaceholderView = require "views.PlaceholderView"
+local CarView = require "views.CarView"
 -- all referenced objects
-local PlaceholderObject = require "objects.PlaceholderObject"
+local Car = require "objects.Car"
 
 --- Visually maps supplied game objects into views.
 ---@class Layouter
@@ -24,14 +24,14 @@ function Layouter.layoutObjectsIntoViewHierarchy(objects)
 
     -- configure parameters for all view types used for drawing
 
-    local placeholderObjects = objects:gameObjectArray(PlaceholderObject)
-    if placeholderObjects then
-        for _, placeholderObject in ipairs(placeholderObjects) do
-            local placeholderView = PlaceholderView:new()
-
-            -- [Configure view]
-
-            table.insert(viewHierarchy, ViewPair:new(placeholderView, placeholderObject))
+    local cars = objects:gameObjectArray(Car)
+    if cars then
+        for _, car in ipairs(cars) do
+            local carView = CarView:new()
+            carView.x = CAR_X
+            carView.y = car.roadPosition * ROAD_LENGTH
+            carView.color = (car.isActivated == true) and COLOR.red or COLOR.white
+            table.insert(viewHierarchy, ViewPair:new(carView, car))
         end
     end
 
