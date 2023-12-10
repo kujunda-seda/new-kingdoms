@@ -12,7 +12,15 @@ local Layouter = {}
 -- Only class methods are used, therefore no constructor for instances exists.
 
 -- Constants
--- [Provide constants for layouting]
+
+local ROAD_CONFIG = StageView.getConfiguration()
+local ROAD_X = love.graphics.getWidth() * ROAD_CONFIG.ROAD_OFFSET  -- Road offset on screen
+local CAR_X = ROAD_X + (ROAD_CONFIG.LANE_WIDTH - CarView.getConfiguration().WIDTH) / 2
+local ROAD_LENGTH = love.graphics.getHeight()+10  -- Length of the road
+local COLOR = {
+    white = {1,1,1},
+    red = {1,0.2,0.2}
+}
 
 --- Creates view hierarchy with configured views and links them to corresponding objects.
 ---@param objects GameObjectCollection Type-associative table of indexed game objects
