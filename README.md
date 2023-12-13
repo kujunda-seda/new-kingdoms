@@ -17,10 +17,16 @@ There will be major changes to the engine after 1.0, but this should not discour
 New Kingdoms is distributed as template code in [`/src`](/src) folder. It is very thin and all-modifiable. Copy the contents of the folder into your repo and run it in the project folder with `love ./` using terminal or with a shortcut using a [plugin](https://marketplace.visualstudio.com/items?itemName=pixelbyte-studios.pixelbyte-love2d) described below.
 
 ### Demo
+
+[About the demo](https://newkingdoms.io/samples)
+
 You can find a working example in the [`/sample`](/sample) folder and run its code with `love sample` (if you cloned the repo as is). You do not need to copy the `sample` folder together with `src` into your own project.
 
-About the demo: It's a very simple simulation of a car driving down the road and changing its color upon interaction.
-
+Note: if you open the repo root folder in an IDE like VSCode with both `src` and `sample` being part of one workspace, the Lua Language Server will issue warnings for duplicate definitions. There are a few options to workaround this:
+1. Do nothing. You can safely ignore the warnings.
+2. Use a preset [`.vscode/settings.json`](/.vscode/settings.json) that skips `sample` from being diagnosed, and uses it as a default running target.
+3. Open a [multi-root workspace](https://code.visualstudio.com/docs/editor/multi-root-workspaces) and add `src` and `sample` separately. Each of them will be correctly diagnosed.
+ 
 ## Prerequisites
 To create games with New Kingdoms you will need LÖVE framework, VS Code, and Lua Language Server. Instructions here are provided for macOS, but it will work on Linux and Windows as well.
 
