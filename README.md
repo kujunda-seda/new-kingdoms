@@ -11,6 +11,7 @@ There will be major changes to the engine after 1.0, but this should not discour
 
 ### See also
 - The motivation behind the creation of the engine in [Clean Architecture in Gamedev](https://medium.com/@yankalbaska/clean-architecture-in-game-development-e57542a96e5e)
+- Layers and classes in the [Final implementation of the game engine](https://medium.com/@yankalbaska/how-clean-should-your-architecture-be-b2157eeea737)
 - Understand how [Object-oriented programming in Lua](https://medium.com/@yankalbaska/oop-in-lua-9962e47ed603) works.
 
 ## Installation
