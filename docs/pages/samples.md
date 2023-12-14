@@ -2,7 +2,7 @@
 layout: default
 title: Samples
 permalink: /samples/
-nav_order: 4
+nav_order: 3
 ---
 # Samples
 You can find a demo project in the [GitHub repository](https://github.com/kujunda-seda/new-kingdoms/tree/master/sample) and see all the required changes by comparing it with the engine (diff with the `src` folder).
