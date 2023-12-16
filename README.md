@@ -1,7 +1,7 @@
 # New Kingdoms Game Engine
 New Kingdoms is a simulator and game prototyping engine.
 
-The main benefit of the New Kingdoms is not the code itself, but a readily implemented concept of decoupled and independently programmed object behaviours and their (optional) presentation. The code sets the minimal required interaction between the game layers, that bring those objects to life in a sandboxed universe.
+The main benefit of New Kingdoms is not the code itself, but a readily implemented concept of decoupled and independently programmed object behaviours and their (optional) presentation. The code sets the minimal required interaction between the game layers, that bring those objects to life in a sandboxed universe.
 
 Please explore the [New Kingdoms Documentation](https://newkingdoms.io) to understand how to create games with it and follow the examples.
 
@@ -65,7 +65,7 @@ To run games from the IDE with a shortcut, install [Love 2D Support](https://mar
 ```
 
 ## Docs
-Docs for the New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
+Docs for New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
 
 1. Install [Homebrew](https://brew.sh)
 1. System Ruby is not recommended by Jekyll. Install Ruby version manager `chruby` to be able to select Ruby version, Ruby installation tool `ruby-install`, and compression tool `xz`:

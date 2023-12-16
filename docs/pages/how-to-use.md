@@ -5,7 +5,7 @@ permalink: /how-to-use/
 nav_order: 1
 ---
 # How to use
-New Kingdoms help rapidly iterate iOS games prototyping. It requires minimum effort to publish the game on an iOS device (together with [template-love-game](https://github.com/kujunda-seda/template-love-game) repository) and allows you to think of objects and their behaviours as in real life. You will need basic programming skills to code in Lua and advanced ability to analyze and model your objects and game rules. With all capabilities of the LÖVE engine you can easily create visual representation to see the objects' life unfold.
+New Kingdoms helps rapidly iterate iOS games prototyping. It requires minimum effort to publish the game on an iOS device (together with [template-love-game](https://github.com/kujunda-seda/template-love-game) repository) and allows you to think of objects and their behaviours as in real life. You will need basic programming skills to code in Lua and advanced ability to analyze and model your objects and game rules. With all capabilities of the LÖVE engine you can easily create visual representation to see the objects' life unfold.
 
 Most of the time, if you don't need to modify the engine itself, you'll  operate in 4 areas:
 - **Objects** - creating a class for each type of object in the simulation world.
