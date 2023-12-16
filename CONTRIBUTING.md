@@ -1,4 +1,4 @@
-Thank you for your interest in contributing to the New Kingdoms! We value your effort and time,
+Thank you for your interest in contributing to New Kingdoms! We value your effort and time,
 please read this before filing an issue or a PR. 
 
 ## Filing issues
