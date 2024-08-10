@@ -1,5 +1,6 @@
 ---
 layout: home
+nav_exclude: true
 ---
 # Welcome to New&nbsp;Kingdoms
 _Simulator and game prototyping engine._
