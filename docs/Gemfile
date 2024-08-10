@@ -6,7 +6,7 @@ gem "webrick", "~> 1.8" # Required for Ruby 3.1
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 
 # gem "jekyll", "~> 4.3.2"
-gem "github-pages", "~> 228"
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
 # Theme
 gem "just-the-docs"
