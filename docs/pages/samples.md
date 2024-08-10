@@ -16,4 +16,4 @@ The changes to engine are:
 ## About the demo
 It's a very simple simulation of a car driving down the road and changing its color upon interaction.
 
-![video](assets/images/sample.gif)
+![video]({{ site.baseurl }}/assets/images/sample.gif)
