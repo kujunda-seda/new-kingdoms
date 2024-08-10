@@ -4,7 +4,7 @@ layout: home
 # Welcome to New&nbsp;Kingdoms
 _Simulator and game prototyping engine._
 
-![New Kingdoms Logo](../../assets/images/new-kingdoms-logo.png){: width="96" }
+![New Kingdoms Logo](../assets/images/new-kingdoms-logo.png){: width="96" }
 
 The main benefit of New Kingdoms is not the code itself, but a readily implemented concept of decoupled and independently programmed object behaviours and their (optional) presentation. The code sets the minimal required interaction between the game layers, that bring those objects to life in a sandboxed universe.
 
