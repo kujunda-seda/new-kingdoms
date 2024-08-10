@@ -3,7 +3,7 @@ New Kingdoms is a simulator and game prototyping engine.
 
 The main benefit of New Kingdoms is not the code itself, but a readily implemented concept of decoupled and independently programmed object behaviours and their (optional) presentation. The code sets the minimal required interaction between the game layers, that bring those objects to life in a sandboxed universe.
 
-Please explore the [New Kingdoms Documentation](https://newkingdoms.io) to understand how to create games with it and follow the examples.
+Please explore the [New Kingdoms Documentation](https://kujunda-seda.github.io/new-kingdoms/) to understand how to create games with it and follow the examples.
 
 There will be major changes to the engine after 1.0, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
 
@@ -19,7 +19,7 @@ New Kingdoms is distributed as template code in [`/src`](/src) folder. It is ver
 
 ### Demo
 
-[About the demo](https://newkingdoms.io/samples)
+[About the demo](https://kujunda-seda.github.io/new-kingdoms/samples)
 
 You can find a working example in the [`/sample`](/sample) folder and run its code with `love sample` (if you cloned the repo as is). You do not need to copy the `sample` folder together with `src` into your own project.
 
