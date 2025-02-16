@@ -31,6 +31,9 @@ Note: if you open the repo root folder in an IDE like VSCode with both `src` and
 ## Prerequisites
 To create games with New Kingdoms you will need LÖVE framework, VS Code, and Lua Language Server. Instructions here are provided for macOS, but it will work on Linux and Windows as well.
 
+### 0. (Optional) iOS/TestFlight Distribution
+If you want to distribute your game to iOS, consider leaving the sources in the `/src` folder and simplify the deployment by starting from the instructions in the [Template LOVE Game repo](https://github.com/kujunda-seda/template-love-game). You can do this any time later as well.
+
 ### 1. LÖVE framework
 To be able to run and compile LÖVE games you need to install the framework/app.
 1. Download the latest version of LÖVE from [the website](http://love2d.org/#download), choose: MacOS 64-bit zipped.
@@ -65,9 +68,6 @@ To run games from the IDE with a shortcut, install [Love 2D Support](https://mar
 ```
 /Applications/love.app/Contents/MacOS/love
 ```
-
-### 5. (Optional) iOS/TestFlight Distribution
-If you want to distribute your game to iOS, consider leaving the sources in the `/src` folder and simplify the deployment with the [Template LOVE Game repo](https://github.com/kujunda-seda/template-love-game). Follow the instructions in the repo to make it work.
 
 ## Docs
 Docs for New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
