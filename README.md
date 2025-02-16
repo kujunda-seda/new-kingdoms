@@ -41,7 +41,7 @@ alias love="/Applications/love.app/Contents/MacOS/love"
 ```
 4. Check that it works with `love --version`
 5. If macOS (e.g. 15.3) is preventing you from running the executable because it was downloaded from the internet and not checked for malware, go to Settings > Privacy & Security. Locate `"love" was blocked to protect your Mac.` and click **Open Anyway**.
-<img width="700" alt="security-prompt" src="https://github.com/user-attachments/assets/231b2c1d-0bae-439d-b771-a90b79d0c375" />
+<img width="700" alt="security-prompt" src="https://github.com/user-attachments/assets/16de84a5-8780-4534-b3f6-90666181a308" />
 
 ### 2. Install [Visual Studio Code](https://code.visualstudio.com/download)
 
@@ -65,6 +65,9 @@ To run games from the IDE with a shortcut, install [Love 2D Support](https://mar
 ```
 /Applications/love.app/Contents/MacOS/love
 ```
+
+### 5. (Optional) iOS/TestFlight Distribution
+If you want to distribute your game to iOS, consider leaving the sources in the `/src` folder and simplify the deployment with the [Template LOVE Game repo](https://github.com/kujunda-seda/template-love-game). Follow the instructions in the repo to make it work.
 
 ## Docs
 Docs for New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
