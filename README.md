@@ -40,6 +40,8 @@ To be able to run and compile LÖVE games you need to install the framework/app.
 alias love="/Applications/love.app/Contents/MacOS/love"
 ```
 4. Check that it works with `love --version`
+5. If macOS (e.g. 15.3) is preventing you from running the executable because it was downloaded from the internet and not checked for malware, go to Settings > Privacy & Security. Locate `"love" was blocked to protect your Mac.` and click **Open Anyway**.
+<img width="700" alt="security-prompt" src="https://github.com/user-attachments/assets/231b2c1d-0bae-439d-b771-a90b79d0c375" />
 
 ### 2. Install [Visual Studio Code](https://code.visualstudio.com/download)
 
