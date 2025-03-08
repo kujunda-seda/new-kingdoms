@@ -44,7 +44,7 @@ end
 --- Get array of game objects by type.
 ---@generic T:GameObject
 ---@param type T
----@return T[]
+---@return T[]|nil
 function GameObjectCollection:gameObjectArray(type)
     return self.objects[type]
 end
