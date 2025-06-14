@@ -13,6 +13,12 @@ function GameObject:new(object)
     return newObject
 end
 
+--- Returns specific class of object.
+---@return GameObject class class object
+function GameObject:class()
+    return getmetatable(self)
+end
+
 --- Notifies object of interaction.
 function GameObject:objectInteracted() end
 
