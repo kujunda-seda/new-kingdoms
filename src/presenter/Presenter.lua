@@ -1,13 +1,14 @@
-local Layouter = require "presenter.Layouter"
-local GameEngine = require "game.GameEngine"
+local Engine = require "game.Engine"
+local GameLayout = require "presenter.GameLayout"
+local GameController = require "game.GameController"
 
---- `Presenter` is responsible for rendering game objects' visual properties.
+--- Coordinates game objects' run loop, visual properties, and interaction.
 ---@class Presenter
----@field private viewHierarchy ViewPair[] A z-indexed array of views.
----@field private gameEngine GameEngine
-local Presenter = {
-    viewHierarchy = {}
-}
+---@field private engine Engine Game loop coordinator
+---@field private layout GameLayout Game view coordinator
+---@field private controller GameController Game (touch) interaction
+---@field private viewHierarchy ViewPair[] A z-indexed array of views
+local Presenter = {}
 
 ---@return Presenter
 function Presenter:new()
@@ -15,23 +16,25 @@ function Presenter:new()
     local newObject = setmetatable({}, self)
     self.__index = self
 
+    newObject.engine = Engine:new()
+    newObject.layout = GameLayout:new()
+    newObject.controller = GameController:new()
     newObject.viewHierarchy = {}
-    newObject.gameEngine = GameEngine:new()
 
     return newObject
 end
 
-function Presenter:startGameEngine()
+function Presenter:startEngine()
     local layoutViews = function()
-        local objects = self.gameEngine:getViewableObjects()
-        self.viewHierarchy = Layouter.layoutObjectsIntoViewHierarchy(objects)
+        local objects = self.engine:getViewableObjects()
+        self.viewHierarchy = self.layout:layoutObjectsIntoViewHierarchy(objects)
     end
 
-    self.gameEngine:startWithObjectListener(layoutViews)
+    self.engine:startWithObjectListener(layoutViews)
 end
 
-function Presenter:stopGameEngine()
-    self.gameEngine:stop()
+function Presenter:stopEngine()
+    self.engine:stop()
 end
 
 --- Renders previously layouted views in UI based on their z-index.
@@ -44,17 +47,18 @@ end
 --- Time event from UI framework.
 ---@param dt number Interval after previous event in milliseconds
 function Presenter:timeEvent(dt)
-    self.gameEngine:timePassed(dt)  -- use game time scale
+    self.engine:timePassed(dt)  -- use game time scale
 end
 
---- Check touch attribution to a rendered object and pass it to the game.
+--- Check touch attribution with z-indexed hierarchy responder chain.
 ---@param x number mouse click or touch x-coordinate
 ---@param y number mouse click or touch y-coordinate
-function Presenter:attributeTouchToObject(x, y)
-    for _, viewPair in ipairs(self.viewHierarchy) do  -- cycle through view hierarchy
+function Presenter:attributeTouch(x, y)
+    for _, viewPair in ipairs(self.viewHierarchy) do  -- cycle through z-indexed view hierarchy
         if viewPair.view:touchInside(x, y) then
-            self.gameEngine:objectInteracted(viewPair.object)
-            return  -- handle single first touch only
+            if self.controller:processTouchFor(viewPair, x, y) then
+                return -- stop responder chain after first successfully processed event
+            end
         end
     end
 end

@@ -17,8 +17,8 @@ end
 function View:draw() end
 
 --- Checks if touch was made within view boundaries.
----@param x number
----@param y number
+---@param x number global x-coordinate
+---@param y number global y-coordinate
 ---@return boolean
 function View:touchInside(x, y) return false end
 

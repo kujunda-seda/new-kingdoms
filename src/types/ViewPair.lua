@@ -20,4 +20,14 @@ function ViewPair:new(view, object)
     return newObject
 end
 
+--- Cast view pair's types.
+---@generic TV:View
+---@generic TO:GameObject
+---@param viewClass TV view type
+---@param objectClass TO object type
+---@return TV, TO
+function ViewPair:cast(viewClass, objectClass)
+    return self.view, self.object
+end
+
 return ViewPair

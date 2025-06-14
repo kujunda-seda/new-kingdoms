@@ -3,7 +3,7 @@ local Presenter = require "presenter.Presenter"
 local presenter = Presenter:new()
 
 function love.load()
-    presenter:startGameEngine()
+    presenter:startEngine()
 end
 
 function love.update(dt)
@@ -16,9 +16,9 @@ end
 
 -- `mousepressed` works both for macOS and iOS
 function love.mousepressed(x, y, button, istouch, presses)
-    presenter:attributeTouchToObject(x, y)
+    presenter:attributeTouch(x, y)
 end
 
 function love.quit()
-    presenter:stopGameEngine()
+    presenter:stopEngine()
 end

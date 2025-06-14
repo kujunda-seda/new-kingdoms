@@ -19,20 +19,11 @@ function GameObjectCollection:new()
     return newObject
 end
 
---- Get class of an instance
----@param object GameObject
----@return GameObject class
----@private
-local function get_class(object)
-    return getmetatable(object)
-end
-
 --- Insert object of type
----@generic T:GameObject
----@param object T
+---@param object GameObject
 function GameObjectCollection:insertObject(object)
 
-    local type = get_class(object)
+    local type = object:class()
     local arrayOfObjects = self:gameObjectArray(type)
     if not arrayOfObjects then
         self.objects[type] = {}
