@@ -7,6 +7,8 @@ nav_order: 3
 # Samples
 You can find a demo project in the [GitHub repository](https://github.com/kujunda-seda/new-kingdoms/tree/master/sample) and see all the required changes by comparing it with the engine (diff with the `src` folder).
 
+The sample is based on version 0.1 and will be updated only at 1.0 release. It will work, but the engine code is not the latest.
+
 The changes to engine are:
 1. **PlaceholderObject** is modified to create `Car` and `Stage` objects.
 2. **PlaceholderView** is modified to create respective `CarView` and `StageView` views.

@@ -23,10 +23,13 @@ New Kingdoms is distributed as template code in [`/src`](/src) folder. It is ver
 
 You can find a working example in the [`/sample`](/sample) folder and run its code with `love sample` (if you cloned the repo as is). You do not need to copy the `sample` folder together with `src` into your own project.
 
-Note: if you open the repo root folder in an IDE like VSCode with both `src` and `sample` being part of one workspace, the Lua Language Server will issue warnings for duplicate definitions. There are a few options to workaround this:
-1. Do nothing. You can safely ignore the warnings.
-2. Use a preset [`.vscode/settings.json`](/.vscode/settings.json) that skips `sample` from being diagnosed, and uses it as a default running target.
-3. Open a [multi-root workspace](https://code.visualstudio.com/docs/editor/multi-root-workspaces) and add `src` and `sample` separately. Each of them will be correctly diagnosed.
+#### Known issues: 
+- The sample is based on version 0.1 and will be updated only at 1.0 release. It will work, but the engine code is not the latest.
+
+- If you open the repo root folder in an IDE like VSCode with both `src` and `sample` being part of one workspace, the Lua Language Server will issue warnings for duplicate definitions. There are a few options to workaround this:
+    1. Do nothing. You can safely ignore the warnings.
+    2. Use a preset [`.vscode/settings.json`](/.vscode/settings.json) that skips `sample` from being diagnosed, and uses it as a default running target.
+    3. Open a [multi-root workspace](https://code.visualstudio.com/docs/editor/multi-root-workspaces) and add `src` and `sample` separately. Each of them will be correctly diagnosed.
  
 ## Prerequisites
 To create games with New Kingdoms you will need LÖVE framework, VS Code, and Lua Language Server. Instructions here are provided for macOS, but it will work on Linux and Windows as well.
