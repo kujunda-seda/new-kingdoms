@@ -6,10 +6,17 @@ local PlaceholderView = require "views.PlaceholderView"
 local PlaceholderObject = require "objects.PlaceholderObject"
 
 --- Visually maps supplied game objects into views.
----@class Layouter
-local Layouter = {}
+---@class GameLayout
+local GameLayout = {}
 
--- Only class methods are used, therefore no constructor for instances exists.
+---@return GameLayout
+function GameLayout:new()
+    -- Required code for instances to find defined methods and inheritance
+    local newObject = setmetatable({}, self)
+    self.__index = self
+
+    return newObject
+end
 
 -- Constants
 -- [Provide constants for layouting]
@@ -17,7 +24,7 @@ local Layouter = {}
 --- Creates view hierarchy with configured views and links them to corresponding objects.
 ---@param objects GameObjectCollection Type-associative table of indexed game objects
 ---@return ViewPair[] viewHierarchy A z-indexed table of view:object pairs
-function Layouter.layoutObjectsIntoViewHierarchy(objects)
+function GameLayout:layoutObjectsIntoViewHierarchy(objects)
 
     ---@type ViewPair[]
     local viewHierarchy = {}
@@ -38,4 +45,4 @@ function Layouter.layoutObjectsIntoViewHierarchy(objects)
     return viewHierarchy
 end
 
-return Layouter
+return GameLayout
