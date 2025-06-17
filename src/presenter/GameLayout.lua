@@ -11,9 +11,8 @@ local GameLayout = {}
 
 ---@return GameLayout
 function GameLayout:new()
-    -- Required code for instances to find defined methods and inheritance
-    local newObject = setmetatable({}, self)
-    self.__index = self
+    -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
+    local newObject = setmetatable({}, self); self.__index = self
 
     return newObject
 end

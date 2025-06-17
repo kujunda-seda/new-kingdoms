@@ -13,9 +13,8 @@ local HEIGHT = 42  -- Height of a view
 
 ---@return PlaceholderView
 function PlaceholderView:new()
-    -- Required code for instances to find defined methods and inheritance
-    local newObject = setmetatable({}, self)
-    self.__index = self
+    -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
+    local newObject = setmetatable({}, self); self.__index = self
 
     newObject.x = 0
     newObject.y = 0
