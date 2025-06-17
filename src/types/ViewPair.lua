@@ -11,11 +11,11 @@ local ViewPair = {}
 ---@param object GameObject
 ---@return ViewPair
 function ViewPair:new(view, object)
-    local newObject = {view = view, object = object}
+    -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
+    local newObject = setmetatable({}, self); self.__index = self
 
-    -- Required code for instances to find defined methods and inheritance
-    setmetatable(newObject, self)
-    self.__index = self
+    newObject.view = view
+    newObject.object = object
 
     return newObject
 end
