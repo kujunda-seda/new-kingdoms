@@ -6,9 +6,8 @@ local View = {}
 ---@param object table? Required for subclassing `View`
 ---@return View # New `View` object  
 function View:new(object)
-    -- Required code for instances to find defined methods and inheritance
-    local newObject = setmetatable(object or {}, self)
-    self.__index = self
+    -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
+    local newObject = setmetatable(object or {}, self); self.__index = self
 
     return newObject
 end
