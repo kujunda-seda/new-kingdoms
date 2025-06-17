@@ -3,7 +3,7 @@
 local View = {}
 
 --- Constructor for use in subclass declaration.
----@param object table? Required when subclassing `View`
+---@param object table? Required for subclassing `View`
 ---@return View # New `View` object  
 function View:new(object)
     -- Required code for instances to find defined methods and inheritance

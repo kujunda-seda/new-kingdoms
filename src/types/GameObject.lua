@@ -3,7 +3,7 @@
 local GameObject = {}
 
 --- Constructor for use in subclass declaration
----@param object table? Required when subclassing `GameObject` to add new properties
+---@param object table? Required for subclassing `GameObject`
 ---@return GameObject # New `GameObject` object  
 function GameObject:new(object)
     -- Required code for instances to find defined methods and inheritance
