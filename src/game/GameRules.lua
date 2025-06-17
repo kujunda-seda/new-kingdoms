@@ -29,8 +29,11 @@ end
 function GameRules:updateWorld(gameWorld, timediff)
 
     -- [Update all object types of gameWorld]
-    for _, placeholderObject in ipairs(gameWorld:gameObjectArray(PlaceholderObject)) do
-        placeholderObject:updateWith(timediff)
+    local placeholderObjects = gameWorld:gameObjectArray(PlaceholderObject)
+    if placeholderObjects then
+        for _, placeholderObject in ipairs(placeholderObjects) do
+            placeholderObject:updateWith(timediff)
+        end
     end
 end
 
