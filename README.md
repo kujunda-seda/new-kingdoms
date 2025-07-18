@@ -73,52 +73,73 @@ To run games from the IDE with a shortcut, install [Love 2D Support](https://mar
 ```
 
 ## Docs
-Docs for New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator. If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
+Docs for New Kingdoms are published on update of the `/docs` folder with a GitHub Actions [workflow](.github/workflows/jekyll.yml) and [Jekyll](https://jekyllrb.com) static site generator.
 
+If you want to render website changes locally before the deployment, you will need to install Jekyll. Instructions are for macOS, assuming you don't have anything installed:
+
+### Install Ruby
 1. Install [Homebrew](https://brew.sh)
-1. System Ruby is not recommended by Jekyll. Install Ruby version manager `chruby` to be able to select Ruby version, Ruby installation tool `ruby-install`, and compression tool `xz`:
+2. System Ruby is not recommended by Jekyll. Install Ruby version manager `rbenv` to be able to select Ruby version:
 ```
-brew install chruby ruby-install xz
+brew install rbenv ruby-build
 ```
-3. Install the Jekyll-supported Ruby:
+3. Update `~/.zshrc` to include rbenv on start:
 ```
-ruby-install ruby 3.1.3
+# Use rbenv for folder specific Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - zsh)"
 ```
-4. Set `zsh` to use `chruby` and to automatically change ruby version by folder containing `.ruby-version` file:
+4. Add OpenSSL parameters in `~/.zshrc` as well:
 ```
-echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
-echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
+# Correct OpenSSL for Ruby 
+export LDFLAGS="-L$(brew --prefix openssl)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl)/include"
+export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 ```
-**If you've cloned the repo and already have the docs, skip steps 4-7.** 
+Apply or restart the Terminal.  
 
-4. Don't get straight into installing `jekyll`, as you will also need `bundler` to install gems into a local path. The `bundler` itself is pre-installed with the latest Ruby. In your docs folder create a bundle and configure it to use local path:
+5. Install the Jekyll-supported Ruby (you can use a different version of Ruby, but modify it in `.ruby-version` as well):
+```
+rbenv install 3.4.1
+```
+6. Check ruby version with:
+```
+ruby -v
+ruby -ropenssl -e 'puts OpenSSL::OPENSSL_VERSION'
+```
+### Fresh Jekyll install
+**⚠️ If you've cloned the repo and already have the docs, skip steps 7-10.** 
+
+7. Don't get straight into installing `jekyll`, as you will also need `bundler` to install gems into a local path. The `bundler` itself is pre-installed with the latest Ruby. In your docs folder create a bundle and configure it to use local path:
 ```
 mkdir docs
 cd docs
 bundle init
 bundle config set --local path 'vendor/bundle'
 ```
-5. Install `jekyll` gem as part of the bundle:
+8. Install `jekyll` gem as part of the bundle:
 ```
 bundle add jekyll
 ```
-6. Create the new Jekyll site forcing because Gemfile is already created and the folder is not empty:
+9. Create the new Jekyll site forcing because Gemfile is already created and the folder is not empty:
 ```
 bundle exec jekyll new --force --skip-bundle .
 ```
-7. For Ruby 3.0+ add [WEBrick](https://github.com/ruby/webrick) HTTP server as it is no longer pre-installed with Ruby:
+10. For Ruby 3.0+ add [WEBrick](https://github.com/ruby/webrick) HTTP server as it is no longer pre-installed with Ruby:
 ```
 bundle add webrick
 ```
-8. Install gems into the bundle:
+### Subsequent installations after cloning
+**ℹ️ Proceed for a cloned repo from here.**  
+11. Install gems into the bundle:
 ```
 bundle install
 ```
-9. Run the Jekyll server on the bundle:
+12. Run the Jekyll server on the bundle:
 ```
 bundle exec jekyll serve
 ```
-You should be able to access the generated docs via browser at http://127.0.0.1:4000/.
+You should be able to access the generated docs via browser at http://127.0.0.1:4000/new-kingdoms/.
 
 ## License
 This is free and unencumbered software released into the public domain, see [the Unlicense](LICENSE).  
