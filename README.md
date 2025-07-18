@@ -98,7 +98,7 @@ export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 ```
 Apply or restart the Terminal.  
 
-5. Install the Jekyll-supported Ruby (you can use a different version of Ruby, but modify it in `.ruby-version` as well). From the `docs` folder, run:
+5. Install the Jekyll-supported Ruby (you can use a different version of Ruby, but modify it in `.ruby-version` as well):
 ```
 rbenv install 3.4.1
 ```
