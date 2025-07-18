@@ -16,8 +16,9 @@ end
 ---@param viewPair ViewPair intersected view-object pair
 ---@param x number global x-coordinate
 ---@param y number global y-coordinate
+---@param state GameObjectCollection Type-associative table of indexed game objects
 ---@return boolean isProcessed returns true if the event was processed and shoudn't be forwarded.
-function GameController:processTouchFor(viewPair, x, y)
+function GameController:processTouchFor(viewPair, x, y, state)
     local type = viewPair.object:class()
     return true
 end
