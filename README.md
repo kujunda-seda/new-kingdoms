@@ -96,7 +96,7 @@ export LDFLAGS="-L$(brew --prefix openssl)/lib"
 export CPPFLAGS="-I$(brew --prefix openssl)/include"
 export PKG_CONFIG_PATH="$(brew --prefix openssl)/lib/pkgconfig"
 ```
-Apply or restart the Terminal.
+Apply or restart the Terminal.  
 
 5. Install the Jekyll-supported Ruby (you can use a different version of Ruby, but modify it in `.ruby-version` as well). From the `docs` folder, run:
 ```
