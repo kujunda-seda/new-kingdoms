@@ -1,24 +1,24 @@
-local Presenter = require "presenter.Presenter"
+local Coordinator = require "engine.Coordinator"
 
-local presenter = Presenter:new()
+local coordinator = Coordinator:new()
 
 function love.load()
-    presenter:startEngine()
+    coordinator:startEngine()
 end
 
 function love.update(dt)
-    presenter:timeEvent(dt)
+    coordinator:timeEvent(dt)
 end
 
 function love.draw()
-    presenter:drawViewHierarchy()
+    coordinator:drawViewHierarchy()
 end
 
 -- `mousepressed` works both for macOS and iOS
 function love.mousepressed(x, y, button, istouch, presses)
-    presenter:attributeTouch(x, y)
+    coordinator:attributeTouch(x, y)
 end
 
 function love.quit()
-    presenter:stopEngine()
+    coordinator:stopEngine()
 end
