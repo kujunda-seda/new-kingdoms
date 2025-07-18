@@ -130,7 +130,7 @@ bundle exec jekyll new --force --skip-bundle .
 bundle add webrick
 ```
 ### Subsequent installations after cloning
-**ℹ️ Proceed for a cloned repo from here.**
+**ℹ️ Proceed for a cloned repo from here.**  
 11. Install gems into the bundle:
 ```
 bundle install
