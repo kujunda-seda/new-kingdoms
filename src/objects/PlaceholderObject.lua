@@ -21,6 +21,7 @@ end
 function PlaceholderObject:updateWith(time)
 
     -- [Update logic]
+    self.isDirty = true
 
 end
 
