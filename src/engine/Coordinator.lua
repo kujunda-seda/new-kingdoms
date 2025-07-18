@@ -53,9 +53,10 @@ end
 ---@param x number mouse click or touch x-coordinate
 ---@param y number mouse click or touch y-coordinate
 function Coordinator:attributeTouch(x, y)
+    local state = self._loop:getStateObjects()
     for _, viewPair in ipairs(self._viewHierarchy) do  -- cycle through z-indexed view hierarchy
         if viewPair.view:touchInside(x, y) then
-            if self._controller:processTouchFor(viewPair, x, y) then
+            if self._controller:processTouchFor(viewPair, x, y, state) then
                 return -- stop responder chain after first successfully processed event
             end
         end

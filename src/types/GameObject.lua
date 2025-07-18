@@ -1,5 +1,6 @@
 --- Game object interface (prototype)
 ---@class GameObject
+---@field isDirty boolean Indicates if the object is dirty (needs update)
 local GameObject = {}
 
 --- Constructor for use in subclass declaration
@@ -9,6 +10,7 @@ function GameObject:new(object)
     -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
     local newObject = setmetatable(object or {}, self); self.__index = self
 
+    newObject.isDirty = false
     return newObject
 end
 

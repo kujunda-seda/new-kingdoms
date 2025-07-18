@@ -48,4 +48,11 @@ function Loop:getViewableObjects()
     return self._gameWorld
 end
 
+--- Returns game state objects grouped by type.
+---@return GameObjectCollection
+function Loop:getStateObjects()
+    -- default scenario: returns all objects of the universe
+    return self._gameWorld
+end
+
 return Loop
