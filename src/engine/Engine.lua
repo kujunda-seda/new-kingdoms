@@ -4,11 +4,11 @@ local GameController = require "game.GameController"
 
 --- Coordinates game objects' run loop, visual properties, and interaction.
 ---@class Engine
+---@field private _isRunning boolean
 ---@field private _rules GameRules Game rules for game objects
 ---@field private _layout GameLayout Game view coordinator
 ---@field private _controller GameController Game (touch) interaction
 ---@field private _viewHierarchy ViewPair[] A z-indexed array of views
----@field private _gameObjectsChanged function? Callback to react on changes
 local Engine = {}
 
 ---@return Engine
@@ -24,17 +24,18 @@ function Engine:new()
     return newObject
 end
 
+function Engine:_layoutViews()
+    local objects = self._rules:getViewableObjects()
+    self._viewHierarchy = self._layout:layoutObjectsIntoViewHierarchy(objects)
+end
+
 function Engine:startEngine()
-    local layoutViews = function()
-        local objects = self._rules:getViewableObjects()
-        self._viewHierarchy = self._layout:layoutObjectsIntoViewHierarchy(objects)
-    end
     self._rules:createWorld()
-    self._gameObjectsChanged = layoutViews
+    self._isRunning = true
 end
 
 function Engine:stopEngine()
-    self._gameObjectsChanged = nil
+    self._isRunning = false
 end
 
 --- Renders previously layouted views in UI based on their z-index.
@@ -47,12 +48,11 @@ end
 --- Time event from UI framework.
 ---@param dt number Interval after previous event in milliseconds
 function Engine:timeEvent(dt)
-    -- if game engine is running it has a callback assigned
-    if self._gameObjectsChanged ~= nil then
+    if self._isRunning then
         -- default scenario: platform time = update time
         self._rules:updateWorld(dt)
-        -- run callback to engine with each time increment
-        self:_gameObjectsChanged()
+        -- run callback to layout engine with each time increment
+        self:_layoutViews()
     end
 end
 
