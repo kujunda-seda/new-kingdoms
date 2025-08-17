@@ -1,17 +1,18 @@
 ---
 layout: default
-title: Coordinator Class
-permalink: /reference/coordinator
+title: Engine Class
+permalink: /reference/engine
 parent: Reference
 nav_order: 1
 ---
-# Coordinator Class
+# Engine Class
 
 Coordinates game objects' run loop, visual properties, and interaction.
 
 ## Private Properties
 
-- **_loop** `Loop`: Main game loop.
+- **_isRunning** `boolean`: Indicates if the engine is running.
+- **_rules** `GameRules`: Game rules for game objects.
 - **_layout** `GameLayout`: Game view coordinator.
 - **_controller** `GameController`: Game (touch) interaction.
 - **_viewHierarchy** `ViewPair[]`: A z-indexed array of views.
@@ -20,10 +21,10 @@ Coordinates game objects' run loop, visual properties, and interaction.
 
 ### new()
 
-Creates a new instance of the Coordinator class.
+Creates a new instance of the Engine class.
 
 **Returns:**
-- `Coordinator`
+- `Engine`
 
 ### startEngine()
 

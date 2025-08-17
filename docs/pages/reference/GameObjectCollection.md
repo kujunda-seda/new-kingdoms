@@ -37,7 +37,7 @@ Gets an array of game objects by type.
 - `type` `T:GameObject`: The type of game object.
 
 **Returns:**
-- `T[]|nil`: Array of game objects or `nil` if none exist.
+- `T[]?`: Array of game objects or `nil` if none exist.
 
 ### firstOfType(type)
 
@@ -47,4 +47,4 @@ Returns the first element of a specific type.
 - `type` `T:GameObject`: The type of game object.
 
 **Returns:**
-- `T|nil`: The first element or `nil` if none exist.
+- `T?`: The first element or `nil` if none exist.
