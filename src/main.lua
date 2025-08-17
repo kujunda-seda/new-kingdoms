@@ -1,4 +1,4 @@
-local Engine = require "engine.Coordinator"
+local Engine = require "engine.Engine"
 
 local engine = Engine:new()
 
