@@ -1,5 +1,5 @@
-require "types.GameObjectCollection"
-local ViewPair = require "types.ViewPair"
+require "engine.GameObjectCollection"
+local ViewPair = require "engine.ViewPair"
 -- all views for layouting
 local PlaceholderView = require "views.PlaceholderView"
 -- all referenced objects

@@ -1,5 +1,5 @@
 local GameRules = require "game.GameRules"
-local GameObjectCollection = require "types.GameObjectCollection"
+local GameObjectCollection = require "engine.GameObjectCollection"
 
 --- Manages main game engine loop (start, update, stop).
 ---@class Loop

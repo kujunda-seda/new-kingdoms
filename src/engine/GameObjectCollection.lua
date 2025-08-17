@@ -1,4 +1,4 @@
-require "types.GameObject"
+require "engine.GameObject"
 
 --- Type-associated table of indexed game objects, e.g. {classA = {object1, object2}, ...}.
 ---@class GameObjectCollection

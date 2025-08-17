@@ -1,4 +1,4 @@
-local GameObjectCollection = require "types.GameObjectCollection"
+local GameObjectCollection = require "engine.GameObjectCollection"
 -- [Require all game objects for game world]
 local PlaceholderObject = require "objects.PlaceholderObject"
 
