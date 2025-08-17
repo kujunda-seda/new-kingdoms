@@ -3,7 +3,7 @@ layout: default
 title: GameLayout Class
 permalink: /reference/gamelayout
 parent: Reference
-nav_order: 1
+nav_order: 3
 ---
 # GameLayout Class
 
@@ -44,3 +44,23 @@ Checks if a view exists and is up-to-date for the given game object.
 
 **Returns:**
 - `View`: New or existing view object.
+
+### _addViewPair(objectCollection, classType, createViewFunction, viewHierarchy)
+
+Creates a view:object pair in the view hierarchy if the object is present.
+
+**Parameters:**
+- `objectCollection` `GameObjectCollection`: Type-associative table of indexed game objects.
+- `classType` `table`: Object class type to search for in the collection of objects.
+- `createViewFunction` `ViewFactory`: Factory function to create a view for the object.
+- `viewHierarchy` `ViewPair[]`: View hierarchy that receives the view pair.
+
+### _createPlaceholderView(object)
+
+Creates a placeholder view for the given object.
+
+**Parameters:**
+- `object` `PlaceholderObject`: Source game object.
+
+**Returns:**
+- `PlaceholderView`: Created view.

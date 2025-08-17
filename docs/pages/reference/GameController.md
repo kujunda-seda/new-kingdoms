@@ -3,7 +3,7 @@ layout: default
 title: GameController Class
 permalink: /reference/gamecontroller
 parent: Reference
-nav_order: 1
+nav_order: 4
 ---
 # GameController Class
 
