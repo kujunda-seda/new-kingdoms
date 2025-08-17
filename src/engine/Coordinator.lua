@@ -3,15 +3,15 @@ local GameLayout = require "game.GameLayout"
 local GameController = require "game.GameController"
 
 --- Coordinates game objects' run loop, visual properties, and interaction.
----@class Coordinator
+---@class Engine
 ---@field private _loop Loop Main game loop
 ---@field private _layout GameLayout Game view coordinator
 ---@field private _controller GameController Game (touch) interaction
 ---@field private _viewHierarchy ViewPair[] A z-indexed array of views
-local Coordinator = {}
+local Engine = {}
 
----@return Coordinator
-function Coordinator:new()
+---@return Engine
+function Engine:new()
     -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
     local newObject = setmetatable({}, self); self.__index = self
 
@@ -23,7 +23,7 @@ function Coordinator:new()
     return newObject
 end
 
-function Coordinator:startEngine()
+function Engine:startEngine()
     local layoutViews = function()
         local objects = self._loop:getViewableObjects()
         self._viewHierarchy = self._layout:layoutObjectsIntoViewHierarchy(objects)
@@ -32,12 +32,12 @@ function Coordinator:startEngine()
     self._loop:startWithObjectListener(layoutViews)
 end
 
-function Coordinator:stopEngine()
+function Engine:stopEngine()
     self._loop:stop()
 end
 
 --- Renders previously layouted views in UI based on their z-index.
-function Coordinator:drawViewHierarchy()
+function Engine:drawViewHierarchy()
     for _, viewPair in ipairs(self._viewHierarchy) do  -- cycle through view hierarchy
         viewPair.view:draw()
     end
@@ -45,14 +45,14 @@ end
 
 --- Time event from UI framework.
 ---@param dt number Interval after previous event in milliseconds
-function Coordinator:timeEvent(dt)
+function Engine:timeEvent(dt)
     self._loop:timePassed(dt)  -- use game time scale
 end
 
 --- Check touch attribution with z-indexed hierarchy responder chain.
 ---@param x number mouse click or touch x-coordinate
 ---@param y number mouse click or touch y-coordinate
-function Coordinator:attributeTouch(x, y)
+function Engine:attributeTouch(x, y)
     local state = self._loop:getStateObjects()
     for _, viewPair in ipairs(self._viewHierarchy) do  -- cycle through z-indexed view hierarchy
         if viewPair.view:touchInside(x, y) then
@@ -63,4 +63,4 @@ function Coordinator:attributeTouch(x, y)
     end
 end
 
-return Coordinator
+return Engine
