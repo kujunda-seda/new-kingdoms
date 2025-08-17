@@ -2,7 +2,7 @@ local GameObjectCollection = require "engine.GameObjectCollection"
 -- [Require all game objects for game world]
 local PlaceholderObject = require "objects.PlaceholderObject"
 
---- Creates and updates game objects according to game rules.
+--- Creates and updates game objects according to game rules (not keeping the state).
 ---@class GameRules
 ---@field private _gameWorld GameObjectCollection  All objects of the game universe.
 local GameRules = {}
@@ -30,7 +30,7 @@ function GameRules:getStateObjects()
     return self._gameWorld
 end
 
--- Creates and returnes configured game objects (game world)
+-- Creates and returns configured game objects (game world)
 ---@return GameObjectCollection
 function GameRules:createWorld()
     -- [Create, configure game objects and add them to gameWorld]

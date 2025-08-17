@@ -38,34 +38,43 @@ function GameLayout:_updateCachedView(object, createViewFunction)
     return view
 end
 
+--- Signature of a function that creates view for game object
+---@alias ViewFactory fun(self: GameLayout, object: GameObject): View
+
+--- Creates a view:object pair in the view hierarchy if the object is present.
+---@param objectCollection GameObjectCollection Type-associative table of indexed game objects
+---@param classType table Object class type to search for in the collection of objects
+---@param createViewFunction ViewFactory Factory function to create a view for the object
+---@param viewHierarchy ViewPair[] View hierarchy that receives the view pair
+---@private
+function GameLayout:_addViewPair(objectCollection, classType, createViewFunction, viewHierarchy)
+    local objects = objectCollection:gameObjectArray(classType)
+    if not objects then return end
+    for _, object in ipairs(objects) do
+        local view = self:_updateCachedView(object, function()
+            return createViewFunction(self, object)
+        end)
+        table.insert(viewHierarchy, ViewPair:new(view, object))
+    end
+end
+
 --- Creates view hierarchy with configured views and links them to corresponding objects.
 ---@param objects GameObjectCollection Type-associative table of indexed game objects
 ---@return ViewPair[] viewHierarchy A z-indexed table of view:object pairs
 function GameLayout:layoutObjectsIntoViewHierarchy(objects)
-
     ---@type ViewPair[]
     local viewHierarchy = {}
 
-    -- configure parameters for all view types used for drawing
-
-    local placeholderObjects = objects:gameObjectArray(PlaceholderObject)
-    if placeholderObjects then
-        for _, placeholderObject in ipairs(placeholderObjects) do
-
-            local placeholderView = self:_updateCachedView(placeholderObject, function()
-                return self:_createPlaceholderView(placeholderObject)
-            end)
-            table.insert(viewHierarchy, ViewPair:new(placeholderView, placeholderObject))
-        end
-    end
+    -- [Configure parameters for all view types used for drawing]
+    self:_addViewPair(objects, PlaceholderObject, self._createPlaceholderView, viewHierarchy)
 
     return viewHierarchy
 end
 
--- Object specific view creation
+-- Object specific view creation (ViewFactories)
 
----@param object PlaceholderObject The object to create a view for
----@return PlaceholderView view The created view
+---@param object PlaceholderObject Source game object
+---@return PlaceholderView view Created view
 ---@private
 function GameLayout:_createPlaceholderView(object)
     local view = PlaceholderView:new()
