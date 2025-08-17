@@ -1,4 +1,4 @@
-local ViewPair = require "types.ViewPair"
+local ViewPair = require "engine.ViewPair"
 
 --- Converts interaction events into meaningful object actions.
 ---@class GameController

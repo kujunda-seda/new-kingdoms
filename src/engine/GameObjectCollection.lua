@@ -1,4 +1,4 @@
-require "types.GameObject"
+require "engine.GameObject"
 
 --- Type-associated table of indexed game objects, e.g. {classA = {object1, object2}, ...}.
 ---@class GameObjectCollection
@@ -34,7 +34,7 @@ end
 --- Get array of game objects by type.
 ---@generic T:GameObject
 ---@param type T
----@return T[]|nil
+---@return T[]?
 function GameObjectCollection:gameObjectArray(type)
     return self._objects[type]
 end
@@ -42,7 +42,7 @@ end
 --- Returns first element of type.
 ---@generic T:GameObject
 ---@param type T
----@return T|nil firstElement
+---@return T? firstElement
 function GameObjectCollection:firstOfType(type)
     local arrayOfObjects = self:gameObjectArray(type)
     if not arrayOfObjects then return nil end
