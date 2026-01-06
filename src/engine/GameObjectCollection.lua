@@ -31,6 +31,14 @@ function GameObjectCollection:insertObject(object)
     table.insert(arrayOfObjects, object)
 end
 
+--- Insert multiple objects of different types (convenience).
+---@param objects GameObject[]
+function GameObjectCollection:insertObjects(objects)
+    for _, object in ipairs(objects) do
+        self:insertObject(object)
+    end
+end
+
 --- Get array of game objects by type.
 ---@generic T:GameObject
 ---@param type T

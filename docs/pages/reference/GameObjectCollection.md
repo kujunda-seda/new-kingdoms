@@ -29,6 +29,13 @@ Inserts an object of a specific type.
 **Parameters:**
 - `object` `GameObject`: The game object to insert.
 
+### insertObjects(objects)
+
+Insert multiple objects of different types (convenience).
+
+**Parameters:**
+- `objects` `GameObject[]`: The game objects to insert.
+
 ### gameObjectArray(type)
 
 Gets an array of game objects by type.
