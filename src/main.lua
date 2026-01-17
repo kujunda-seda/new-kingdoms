@@ -1,7 +1,6 @@
 require "app.compose"
 
--- returning layout is app-specific, and can be used for viewport configuration
-local engine, layout = ComposeApp()
+local engine = ComposeApp()
 
 function love.load()
     engine:startEngine()

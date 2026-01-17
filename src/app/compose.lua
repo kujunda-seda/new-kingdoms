@@ -3,16 +3,15 @@ local GameRules = require "app.GameRules"
 local GameLayout = require "app.GameLayout"
 local GameController = require "app.GameController"
 
---- Root app composition.
+--- Root app composition. Can be changed to have multiple returns for configuration.
 ---@return Engine engine configured engine
----@return GameLayout layout (app-specific return) layout for future configuration (e.g. viewport)
 function ComposeApp()
     local rules = GameRules:new()
     local layout = GameLayout:new()
     local controller = GameController:new()
 
     local engine = Engine:new(rules, layout, controller)
-    return engine, layout
+    return engine
 end
 
 return ComposeApp
