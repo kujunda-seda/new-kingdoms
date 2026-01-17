@@ -3,7 +3,7 @@ local GameObjectCollection = require "engine.GameObjectCollection"
 local PlaceholderObject = require "objects.PlaceholderObject"
 
 --- Creates and updates game objects according to game rules (not keeping the state).
----@class GameRules
+---@class GameRules:Ruleset
 ---@field private _gameWorld GameObjectCollection  All objects of the game universe.
 local GameRules = {}
 

@@ -6,7 +6,7 @@ local PlaceholderView = require "views.PlaceholderView"
 local PlaceholderObject = require "objects.PlaceholderObject"
 
 --- Visually maps supplied game objects into views.
----@class GameLayout
+---@class GameLayout:Layout
 ---@field private _viewCache table Cache for view objects, indexed by game object
 local GameLayout = {}
 
