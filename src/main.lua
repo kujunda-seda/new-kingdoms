@@ -1,6 +1,7 @@
-local Engine = require "engine.Engine"
+require "app.compose"
 
-local engine = Engine:new()
+-- returning layout is app-specific, and can be used for viewport configuration
+local engine, layout = ComposeApp()
 
 function love.load()
     engine:startEngine()

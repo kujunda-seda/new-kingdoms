@@ -5,20 +5,23 @@ local GameController = require "app.GameController"
 --- Coordinates game objects' run loop, visual properties, and interaction.
 ---@class Engine
 ---@field private _isRunning boolean
----@field private _rules GameRules Game rules for game objects
----@field private _layout GameLayout Game view coordinator
----@field private _controller GameController Game (touch) interaction
+---@field private _rules Ruleset Game rules for game objects
+---@field private _layout Layout Game view coordinator
+---@field private _controller Controller Game (touch) interaction
 ---@field private _viewHierarchy ViewPair[] A z-indexed array of views
 local Engine = {}
 
+---@param rules Ruleset
+---@param layout Layout
+---@param controller Controller
 ---@return Engine
-function Engine:new()
+function Engine:new(rules, layout, controller)
     -- Lua code to find object & inherited methods (tinyurl.com/oop-lua)
     local newObject = setmetatable({}, self); self.__index = self
 
-    newObject._rules = GameRules:new()
-    newObject._layout = GameLayout:new()
-    newObject._controller = GameController:new()
+    newObject._rules = rules
+    newObject._layout = layout
+    newObject._controller = controller
     newObject._viewHierarchy = {}
 
     return newObject
