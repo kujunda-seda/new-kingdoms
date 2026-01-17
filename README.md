@@ -5,7 +5,7 @@ The main benefit of New Kingdoms is not the code itself, but a readily implement
 
 Please explore the [New Kingdoms Documentation](https://kujunda-seda.github.io/new-kingdoms/) to understand how to create games with it and follow the examples.
 
-There will be major changes to the engine after 1.0, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
+There will be major changes to the engine after 0.1, but this should not discourage you from starting now. New Kingdoms is provided without packaging and is dedicated to public domain, so you can tailor it to your games' needs as you wish. 
 
 <img alt="public domain" src="https://github.com/kujunda-seda/new-kingdoms/assets/25789576/76810063-52c4-4b7a-9213-df88387d1c99" height="33"/>
 

@@ -1,0 +1,63 @@
+%% module dependency overview (Mermaid)
+flowchart
+
+subgraph Framework
+  Main[main.lua]
+  Compose[app/compose.lua]
+end
+
+subgraph Drivers
+  Ruleset{{Ruleset}}
+  Layout{{Layout}}
+  Controller{{Controller}}
+  Engine[engine/Engine]
+end
+
+subgraph Presentation
+subgraph Adapters
+  GameLayout[app/GameLayout]
+  GameController[app/GameController]
+end
+
+subgraph UI
+  Views[ui/ViewN]
+end
+end
+
+subgraph Use_Cases[Use Cases]
+  GameRules[app/GameRules]
+  Objects[entities/ObjectN]
+end
+
+subgraph Core[Core + Shared]
+  GameObject[core/GameObject]
+  GameObjectCollection[core/GameObjectCollection]
+  View[core/View]
+  ViewPair[core/ViewPair]
+  Util[shared/UtilN]
+end
+
+%% Composition
+Main --> Compose
+Compose --> Engine
+Compose --> GameRules
+Compose --> GameLayout
+Compose --> GameController
+
+%% Engine abstractions
+Engine -.-> Ruleset
+Engine -.-> Layout
+Engine -.-> Controller
+
+%% Presentation coupling
+GameLayout --> Views
+GameController --> Views
+
+%% Use cases flow
+GameRules --> Objects
+
+%% Cross-layer
+Adapters --> Objects
+UI --> Core
+Objects --> Core
+Drivers --> Core
