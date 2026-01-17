@@ -1,6 +1,6 @@
-local GameRules = require "game.GameRules"
-local GameLayout = require "game.GameLayout"
-local GameController = require "game.GameController"
+local GameRules = require "app.GameRules"
+local GameLayout = require "app.GameLayout"
+local GameController = require "app.GameController"
 
 --- Coordinates game objects' run loop, visual properties, and interaction.
 ---@class Engine
