@@ -1,6 +1,6 @@
-local Engine = require "engine.Engine"
+require "app.compose"
 
-local engine = Engine:new()
+local engine = ComposeApp()
 
 function love.load()
     engine:startEngine()

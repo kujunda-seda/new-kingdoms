@@ -1,12 +1,12 @@
-require "engine.GameObjectCollection"
-local ViewPair = require "engine.ViewPair"
+require "core.GameObjectCollection"
+local ViewPair = require "core.ViewPair"
 -- all views for layouting
-local PlaceholderView = require "views.PlaceholderView"
+local PlaceholderView = require "ui.PlaceholderView"
 -- all referenced objects
-local PlaceholderObject = require "objects.PlaceholderObject"
+local PlaceholderObject = require "entities.PlaceholderObject"
 
 --- Visually maps supplied game objects into views.
----@class GameLayout
+---@class GameLayout:Layout
 ---@field private _viewCache table Cache for view objects, indexed by game object
 local GameLayout = {}
 

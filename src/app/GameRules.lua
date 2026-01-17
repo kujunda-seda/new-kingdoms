@@ -1,9 +1,9 @@
-local GameObjectCollection = require "engine.GameObjectCollection"
+local GameObjectCollection = require "core.GameObjectCollection"
 -- [Require all game objects for game world]
-local PlaceholderObject = require "objects.PlaceholderObject"
+local PlaceholderObject = require "entities.PlaceholderObject"
 
 --- Creates and updates game objects according to game rules (not keeping the state).
----@class GameRules
+---@class GameRules:Ruleset
 ---@field private _gameWorld GameObjectCollection  All objects of the game universe.
 local GameRules = {}
 

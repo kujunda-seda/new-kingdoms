@@ -1,4 +1,4 @@
-local GameObject = require "engine.GameObject"
+local GameObject = require "core.GameObject"
 
 --- `PlaceholderObject` game object is used to show an example game object only. Can be removed
 ---@class PlaceholderObject:GameObject

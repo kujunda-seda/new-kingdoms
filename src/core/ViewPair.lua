@@ -1,5 +1,5 @@
-require "engine.View"
-require "engine.GameObject"
+require "core.View"
+require "core.GameObject"
 
 --- Structure linking `View` and a `GameObject`
 ---@class ViewPair
